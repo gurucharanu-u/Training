@@ -1,5 +1,5 @@
 #include<stdio.h>
-void names(char first[],char last[])
+void names(char first[],char last[],int sw)
 {
     int i=0;
     char full[100];
@@ -19,10 +19,16 @@ void names(char first[],char last[])
     }
     full[i]='\0';
     printf("%s\n",full);
+    int len=i+1;
+    if(len<sw)
+    printf("fits in the screen");
+    else
+    printf("does not fit in the screen!");
 }
 void main()
 {
     char first[100]="Virat";
     char last[100]="Kohli";
-    names(first,last);
+    int sw=6;
+    names(first,last,sw);
 }
